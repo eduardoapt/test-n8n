@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import MotivationalPage from './MotivationalPage'
 
 function App() {
   const [isLogin, setIsLogin] = useState(true)
@@ -35,16 +36,7 @@ function App() {
   }
 
   if (isLoggedIn) {
-    return (
-      <div className="container">
-        <h1>Bem-vindo, {username}!</h1>
-        <div className="card">
-          <p>Status: <strong>Logado</strong></p>
-          <p className="implement">Será implementado</p>
-          <button onClick={() => setIsLoggedIn(false)}>Sair</button>
-        </div>
-      </div>
-    )
+    return <MotivationalPage username={username} onLogout={() => setIsLoggedIn(false)} />
   }
 
   return (
